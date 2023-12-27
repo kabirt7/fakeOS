@@ -1,0 +1,70 @@
+.calculator {
+  display: flex;
+  flex-direction: column;
+  height: 230px;
+  width: 150px;
+  border-radius: 10px;
+  background-color: bisque;
+
+  &__banner {
+    height: 15px;
+    padding-left: 10px;
+  }
+
+  &__display {
+    height: 45px;
+    position: relative;
+
+    &__text {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      font-size: x-large;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+    gap: 5px;
+  }
+}
+
+#top {
+  height: 60px;
+  width: 100%;
+}
+
+#bottom {
+  width: 100%;
+  flex: 1;
+
+  table {
+    width: 100%;
+    height: 100%;
+
+    border-spacing: 1px;
+  }
+
+  tbody {
+  }
+
+  td {
+    width: 25%;
+    text-align: center;
+    background-color: rgb(235, 194, 255);
+  }
+}
+
+#zero {
+  border-radius: 0 0 0 10px;
+}
+
+#sum {
+  border-radius: 0 0 10px 0;
+}
+
+// border-radius: 0 0 0 20px
