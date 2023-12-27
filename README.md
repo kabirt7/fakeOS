@@ -8,6 +8,7 @@
 ## Banner Menu
 - add drop down menu
 - add modal
+- add clock
 
 ## Dock
 - add hover info functionality
