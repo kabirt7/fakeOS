@@ -9,6 +9,7 @@
 - add drop down menu
 - add modal
 - add clock
+- on click effect including negative margin styling
 
 ## Dock
 - add hover info functionality
