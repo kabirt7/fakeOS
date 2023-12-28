@@ -4,7 +4,7 @@
 
 .banner {
   width: 100vw;
-  position: fixed;
+  position: relative;
   background-color: lightblue;
 
   &__list {
@@ -14,14 +14,14 @@
     justify-content: flex-start;
     align-items: center;
     list-style-type: none;
+  }
 
-    &__menu {
-      &--hidden {
-        display: none;
-      }
-      &--show {
-        display: block;
-      }
+  &__menu {
+    &--hidden {
+      display: none;
+    }
+    &--show {
+      position: absolute;
     }
   }
 
@@ -34,7 +34,6 @@
 .desktop {
   height: calc(100vh - 20px);
   background-color: rgb(196, 255, 196);
-  padding-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,7 +63,7 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    border-radius: 15px;
+    border-radius: 18px;
 
     background: rgba(
       255,

@@ -2,8 +2,8 @@
 
 export const toggleMenu = () => {
   const modifiedElement = document.querySelector("#apple-menu");
-  modifiedElement.classList.toggle("banner__list__menu--hidden");
-  modifiedElement.classList.toggle("banner__list__menu--show");
+  modifiedElement.classList.toggle("banner__menu--hidden");
+  modifiedElement.classList.toggle("banner__menu--show");
 };
 
 // Example usage:

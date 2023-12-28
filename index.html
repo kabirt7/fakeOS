@@ -7,21 +7,24 @@
     <title>fakeOS</title>
     <link rel="stylesheet" href="./styling/CSS/styles.css" />
     <link rel="stylesheet" href="./styling/CSS/calculator.css" />
-    <script type="module" src="./scripts/script.js" defer></script>
   </head>
   <body>
     <section class="banner">
       <ul class="banner__list">
-        <div id="apple-wrapper">
-          <li>apple</li>
-          <div id="apple-menu" class="banner__list__menu--hidden"></div>
-        </div>
+        <li id="apple-wrapper">apple</li>
         <li>Applications</li>
         <li>Edit</li>
         <li>Selection</li>
         <li>Help</li>
       </ul>
     </section>
+    <div id="apple-menu" class="banner__menu--hidden">
+      <ul>
+        <li>About This Mac</li>
+        <li>System Preferences</li>
+        <li>Shutdown...</li>
+      </ul>
+    </div>
 
     <main class="desktop">
       <div id="htmlRef"></div>
@@ -35,5 +38,6 @@
         </ul>
       </footer>
     </main>
+    <script type="module" src="./scripts/script.js" defer></script>
   </body>
 </html>

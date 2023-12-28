@@ -28,6 +28,9 @@
   padding: 0;
   gap: 5px;
 }
+.calculator__expression {
+  display: none;
+}
 
 #top {
   height: 60px;

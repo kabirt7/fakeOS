@@ -31,6 +31,10 @@
     padding: 0;
     gap: 5px;
   }
+
+  &__expression {
+    display: none;
+  }
 }
 
 #top {
