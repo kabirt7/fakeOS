@@ -2,6 +2,30 @@
   margin: 0;
 }
 
+.red {
+  background-color: rgb(249, 94, 94);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  list-style-type: none;
+}
+
+.yellow {
+  background-color: rgb(247, 221, 119);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  list-style-type: none;
+}
+
+.green {
+  background-color: rgb(113, 249, 127);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  list-style-type: none;
+}
+
 .banner {
   width: 100vw;
   position: relative;
@@ -35,7 +59,7 @@
   align-items: center;
 }
 
-.footer__container {
+.dock__container {
   height: 80px;
   background-color: pink;
   z-index: 998;
@@ -45,7 +69,7 @@
   bottom: 0;
   width: 100%;
 }
-.footer__wrap {
+.dock__wrap {
   padding: 0 10px;
   margin-top: 2.5px;
   display: flex;
@@ -61,7 +85,7 @@
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1); /* Shadow for the glassy effect */
   backdrop-filter: blur(10px);
 }
-.footer__wrap li {
+.dock__wrap li {
   width: 55px;
   height: 55px;
   text-align: center;

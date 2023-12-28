@@ -5,13 +5,17 @@ import {
   clearDisplay,
   evalExp,
 } from "./modules/modal-calculator.js";
+import { photoViewerModal } from "./modules/modal-photo-viewer.js";
 
 // banner functionality
 const appleIcon = document.querySelector("#apple-wrapper");
 appleIcon.addEventListener("click", toggleMenu);
 
 // Dock Modals
-const calcIcon = document.querySelector(".footer__wrap li:nth-child(2)");
+const photoViewerIcon = document.querySelector(".dock__wrap li:nth-child(1)");
+photoViewerIcon.addEventListener("click", photoViewerModal);
+
+const calcIcon = document.querySelector(".dock__wrap li:nth-child(2)");
 calcIcon.addEventListener("click", calcModal);
 
 // Calculator functionality with event delegation
@@ -34,41 +38,4 @@ modalContainer.addEventListener("click", function (event) {
   }
 });
 
-// import { toggleMenu } from "./modules/banner.js";
-// import { calcModal } from "./modules/modal-calculator.js";
-// import { appendToDisplay } from "./modules/modal-calculator.js";
-
-// // banner functionality
-
-// const appleIcon = document.querySelector("#apple-wrapper");
-// appleIcon.addEventListener("click", toggleMenu);
-
-// // Dock Modals
-
-// const calcIcon = document.querySelector(".footer__wrap li:nth-child(2)");
-// calcIcon.addEventListener("click", calcModal);
-
-// // Calculator functionality
-
-// const calcButtons = document.querySelectorAll("td");
-// console.log(calcButtons);
-// calcButtons.forEach(function (button) {
-//   button.addEventListener("click", function () {
-//     if (/[0-9]/.test(button.dataset.value)) {
-//       appendToDisplay(button.dataset.value);
-//     }
-//   });
-// });
-
-// footer menu single clickable functionality + greyed out other menu items
-
-// desktop icons, 3 of them. some as in the footer menu
-// these modals will work through js, not the show hide functionality
-
-// const appleWrapper = document.querySelector("#apple-wrapper");
-// const appleMenu = document.querySelector("#apple-menu");
-
-// appleWrapper.addEventListener("click", function () {
-//   appleMenu.classList.toggle("banner__list__menu--hidden");
-//   appleMenu.classList.toggle("banner__list__menu--show");
-// });
+// Photo Viewer Functionality

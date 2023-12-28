@@ -10,7 +10,7 @@ export const calcModal = () => {
       <li>+</li>
      </ul>
     </div> 
-    <div class="calculator__display"><p class="calculator__display__text">5</p></div><div class="calculator__expression"></div>
+    <div class="calculator__display"><p class="calculator__display__text"></p></div><div class="calculator__expression"></div>
   </section>
   <section id="bottom">
     <table>
@@ -53,13 +53,16 @@ export const calcModal = () => {
 export const appendToDisplay = (value) => {
   console.log("got to append function");
   const display = document.querySelector(".calculator__display__text");
+  display.textContent = "";
   display.textContent += value;
 };
 
 export const clearDisplay = () => {
   console.log("got to clear function");
+  let exp = document.querySelector(".calculator__expression");
   let display = document.querySelector(".calculator__display__text");
   display.textContent = "";
+  exp.textContent = "";
 };
 
 export const evalExp = (value) => {
@@ -70,6 +73,7 @@ export const evalExp = (value) => {
   if (/[=]/.test(value)) {
     console.log("got to equals");
     display.textContent = eval(exp.textContent);
+    exp.textContent = display.textContent;
   } else if (/[^=]/.test(value)) {
     exp.textContent += value;
     console.log(exp);

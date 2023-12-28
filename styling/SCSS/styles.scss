@@ -2,6 +2,28 @@
   margin: 0;
 }
 
+.red {
+  background-color: rgb(249, 94, 94);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  list-style-type: none;
+}
+.yellow {
+  background-color: rgb(247, 221, 119);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  list-style-type: none;
+}
+.green {
+  background-color: rgb(113, 249, 127);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  list-style-type: none;
+}
+
 .banner {
   width: 100vw;
   position: relative;
@@ -40,7 +62,7 @@
   align-items: center;
 }
 
-.footer {
+.dock {
   &__container {
     height: 80px;
     background-color: pink;
@@ -80,10 +102,6 @@
       text-align: center;
       line-height: 50px;
     }
-
-    // li:nth-child(2) {
-
-    // }
   }
 }
 

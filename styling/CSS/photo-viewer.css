@@ -1,0 +1,48 @@
+.photo-viewer {
+  width: 70vw;
+  height: 60vh;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  border-radius: 12px;
+}
+
+.left {
+  flex: 0 0 200px;
+}
+.left__header {
+  height: 50px;
+  background-color: rgb(241, 247, 190);
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 19px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px 0 0 0;
+}
+.left__menu {
+  padding: 0;
+}
+.left__menu > div {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+.right {
+  flex: 1;
+  background-color: rgb(242, 201, 252);
+  border-radius: 0 12px 12px 0;
+}
+.right__header {
+  height: 50px;
+  background-color: rgb(198, 190, 247);
+  display: flex;
+  align-items: center;
+  border-radius: 0 12px 0 0;
+}
+.right__icon__container {
+  background-color: rgb(249, 168, 168);
+  height: calc(100% - 50px);
+  border-radius: 0 0 12px 0;
+}
