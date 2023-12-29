@@ -1,5 +1,5 @@
 export const calcModal = () => {
-  const html = document.querySelector("#htmlRef");
+  const html = document.querySelector("#htmlRef-calc");
   html.innerHTML === ""
     ? (html.innerHTML = `<div class="calculator">
   <section id="top">
