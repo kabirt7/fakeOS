@@ -24,12 +24,29 @@
   }
 
   &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 0;
+    width: 200px;
+    font-size: small;
+
+    &__title {
+      font-size: small;
+      padding-left: 15px;
+      padding-bottom: 3px;
+      padding-top: 3px;
+    }
 
     > div {
       display: flex;
       align-items: center;
       list-style-type: none;
+      width: 160px;
+      padding: 3px 10px 3px 10px;
+      background-color: rgb(245, 220, 245);
+      border-radius: 4px;
+      gap: 5px;
     }
   }
 }
@@ -45,13 +62,34 @@
     display: flex;
     align-items: center;
     border-radius: 0 12px 0 0;
+    padding-left: 10px;
+
+    > h3 {
+      padding-left: 7px;
+    }
   }
 
   &__icon {
+    background-color: aliceblue;
+    width: 50px;
+    height: 50px;
+
     &__container {
       background-color: rgb(249, 168, 168);
-      height: calc(100% - 50px);
+      height: calc(100% - 90px);
       border-radius: 0 0 12px 0;
+      list-style-type: none;
+      display: flex;
+      gap: 80px;
+      padding-left: 50px;
+      padding-top: 40px;
     }
+  }
+
+  &__button {
+    height: 25px;
+    width: 30px;
+    border-radius: 5px;
+    border: none;
   }
 }

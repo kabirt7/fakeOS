@@ -18,8 +18,8 @@ export const photoViewerModal = () => {
    </section> 
    <section class="right">
     <div class="right__header">
-     <button></button>
-     <button></button>
+     <button class="right__button"></button>
+     <button class="right__button"></button>
      <h3>My Dog</h3>
     </div>
     <ul class="right__icon__container">

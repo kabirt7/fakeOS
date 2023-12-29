@@ -21,12 +21,28 @@
   border-radius: 12px 0 0 0;
 }
 .left__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 0;
+  width: 200px;
+  font-size: small;
+}
+.left__menu__title {
+  font-size: small;
+  padding-left: 15px;
+  padding-bottom: 3px;
+  padding-top: 3px;
 }
 .left__menu > div {
   display: flex;
   align-items: center;
   list-style-type: none;
+  width: 160px;
+  padding: 3px 10px 3px 10px;
+  background-color: rgb(245, 220, 245);
+  border-radius: 4px;
+  gap: 5px;
 }
 
 .right {
@@ -40,9 +56,29 @@
   display: flex;
   align-items: center;
   border-radius: 0 12px 0 0;
+  padding-left: 10px;
+}
+.right__header > h3 {
+  padding-left: 7px;
+}
+.right__icon {
+  background-color: aliceblue;
+  width: 50px;
+  height: 50px;
 }
 .right__icon__container {
   background-color: rgb(249, 168, 168);
-  height: calc(100% - 50px);
+  height: calc(100% - 90px);
   border-radius: 0 0 12px 0;
+  list-style-type: none;
+  display: flex;
+  gap: 80px;
+  padding-left: 50px;
+  padding-top: 40px;
+}
+.right__button {
+  height: 25px;
+  width: 30px;
+  border-radius: 5px;
+  border: none;
 }
