@@ -40,8 +40,9 @@
     flex: 0 0 200px;
     background-color: rgb(152, 190, 251);
     border-radius: 0 0 0 12px;
+    overflow: auto;
 
-    li {
+    &__item {
       display: flex;
       align-items: flex-start;
       list-style-type: none;
@@ -51,15 +52,36 @@
       background-color: rgb(245, 220, 245);
       border-radius: 4px;
       gap: 5px;
+      overflow: auto;
+      flex-shrink: 0;
+
+      &--clicked {
+        background-color: aqua;
+      }
     }
   }
 
   &__create {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     flex: 1;
     background-color: blanchedalmond;
     border-radius: 0 0 12px 0;
-    padding-top: 10px;
-    padding-left: 10px;
+
+    textarea {
+      border: none;
+      height: 100%;
+      outline: none;
+      resize: none;
+      padding-top: 10px;
+      padding-left: 10px;
+      border-radius: 0 0 12px 0;
+
+      &:focus {
+        border-color: transparent;
+      }
+    }
   }
 
   &__right {

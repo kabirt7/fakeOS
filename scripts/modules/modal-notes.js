@@ -10,20 +10,41 @@ export const notesModal = () => {
        <li class="yellow"></li>
        <li class="green"></li>
       </ul>
-      <button></button>
-      <button></button>
+      <button class="green" id="save-button"></button>
+      <button class="red" id="delete-button"></button>
      </section> 
      <section class="notes__container">
        <ul class="notes__list">
-        <li>Note 1</li>
-        <li>Note 2</li>
-        <li>Note 3</li>
+        <li class="notes__list__item">Note 1</li>
+        <li class="notes__list__item">Note 2</li>
+        <li class="notes__list__item">Note 3</li>
        </ul>
        <main class="notes__create">
-        <h1>hello</h1>
+        <textarea class="notes__create__input"></textarea>
        </main>
      </section>
     </div>
     `)
     : (html.innerHTML = "");
 };
+
+// const tmp = noteInput.textContent;
+
+export function saveNote() {
+  const noteContainer = document.querySelector(".notes__list");
+  const noteInput = document.querySelector(".notes__create__input");
+  console.log(noteInput);
+
+  const noteInputText = noteInput.value.trim();
+  const newNote = document.createElement("li");
+  newNote.classList.add("notes__list__item");
+  newNote.textContent = noteInputText;
+  noteContainer.appendChild(newNote);
+}
+
+export function deleteNote() {
+  const noteContainer = document.querySelector(".notes__list");
+
+  const lastItem = noteContainer.lastElementChild;
+  lastItem.remove();
+}

@@ -11,7 +11,7 @@ import {
   findParent,
   changeAlbum,
 } from "./modules/modal-photo-viewer.js";
-import { notesModal } from "./modules/modal-notes.js";
+import { notesModal, saveNote, deleteNote } from "./modules/modal-notes.js";
 
 // banner functionality
 const appleIcon = document.querySelector("#apple-wrapper");
@@ -58,5 +58,23 @@ photoMenu.addEventListener("click", function (event) {
 
   if (clickedElement.classList.contains("left__menu__option")) {
     changeAlbum(clickedElementId, clickedElement);
+  }
+});
+
+const noteContainer = document.querySelector("#htmlRef-notes");
+
+// const saveButton = document.querySelector("#save-button");
+
+noteContainer.addEventListener("click", function (event) {
+  const target = event.target;
+  const check = document.querySelector(".notes__list__item");
+  if (target.id === "save-button") {
+    saveNote();
+  }
+
+  if (check) {
+    if (target.id === "delete-button") {
+      deleteNote();
+    }
   }
 });
