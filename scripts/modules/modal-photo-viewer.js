@@ -24,16 +24,16 @@ export const photoViewerModal = () => {
     </div>
     <ul class="right__icon__container">
      <div class="right__icon__album" id="album-one">
-     <li class="right__icon">Img1</li>
-     <li class="right__icon">Img2</li>
+     <li class="right__icon" id="Img-1"></li>
+     <li class="right__icon" id="Img-2"></li>
      </div>
      <div class="right__icon__album right__icon__album--hidden" id="album-two">
-     <li class="right__icon">Img3</li>
-     <li class="right__icon">Img4</li>
+     <li class="right__icon" id="Img-3"></li>
+     <li class="right__icon" id="Img-4"></li>
      </div>
      <div class="right__icon__album right__icon__album--hidden" id="album-three">
-     <li class="right__icon">Img5</li>
-     <li class="right__icon">Img6</li>
+     <li class="right__icon" id="Img-5"></li>
+     <li class="right__icon" id="Img-6"></li>
      </div>
     </ul>
    </section>
@@ -110,4 +110,10 @@ export function changeAlbum(id, element) {
   }
 
   console.log("end of change album function !");
+}
+
+export function imageOpen(value) {
+  const imageModal = document.querySelector("#htmlRef-modal");
+  imageModal.classList.toggle(`${value}`);
+  console.log("image opened");
 }

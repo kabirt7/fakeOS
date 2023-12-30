@@ -154,3 +154,8 @@
   align-self: center;
   z-index: 5;
 }
+
+#htmlRef-modal {
+  align-self: center;
+  z-index: 7;
+}

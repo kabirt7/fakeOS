@@ -95,3 +95,10 @@
   border: none;
   display: none;
 }
+
+.Img-1 {
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  background-image: url("edit.jpg");
+}

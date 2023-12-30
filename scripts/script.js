@@ -10,6 +10,7 @@ import {
   findParentId,
   findParent,
   changeAlbum,
+  imageOpen,
 } from "./modules/modal-photo-viewer.js";
 import { notesModal, saveNote, deleteNote } from "./modules/modal-notes.js";
 
@@ -60,6 +61,19 @@ photoMenu.addEventListener("click", function (event) {
     changeAlbum(clickedElementId, clickedElement);
   }
 });
+
+// on click, send through text content number
+
+photoMenu.addEventListener("dblclick", function (event) {
+  const target = event.target;
+  console.log("doubleclicked");
+
+  if (target.classList.contains("right__icon")) {
+    imageOpen(target.id);
+  }
+});
+
+// Notes functionality
 
 const noteContainer = document.querySelector("#htmlRef-notes");
 
