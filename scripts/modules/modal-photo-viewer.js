@@ -11,16 +11,16 @@ export const photoViewerModal = () => {
     </ul>
     <div class="left__menu__title">Albums</div>
      <ul class="left__menu">
-      <div class="left__menu__option" id="my-dog"><div class="red"></div><li>My Dog</li></div>
+      <div class="left__menu__option left__menu__option--clicked" id="my-dog"><div class="red"></div><li>My Dog</li></div>
       <div class="left__menu__option" id="outfits"><div class="red"></div><li>Outfits</li></div>
       <div class="left__menu__option" id="art"><div class="red"></div><li>Art</li></div>
      </ul>
    </section> 
    <section class="right">
     <div class="right__header">
-     <button class="right__button"></button>
-     <button class="right__button"></button>
-     <h3>My Dog</h3>
+     <button class="right__button right__button__left"></button>
+     <button class="right__button right__button__right"></button>
+     <h3 class="right__header__title">My Dog</h3>
     </div>
     <ul class="right__icon__container">
      <div class="right__icon__album" id="album-one">
@@ -62,7 +62,7 @@ export function findParent(element) {
   return null;
 }
 
-export function deselectItems() {
+function deselectMenuItems() {
   const leftMenuOptions = document.querySelectorAll(".left__menu__option");
   leftMenuOptions.forEach((option) => {
     option.classList.remove("left__menu__option--clicked");
@@ -78,25 +78,36 @@ function hideImages() {
   console.log("images hidden!");
 }
 
-export function changeAlbum(value) {
+export function changeAlbum(id, element) {
+  const albums = [
+    {
+      id: "my-dog",
+      element: document.querySelector("#album-one"),
+      title: "My Dog",
+    },
+    {
+      id: "outfits",
+      element: document.querySelector("#album-two"),
+      title: "Outfits",
+    },
+    {
+      id: "art",
+      element: document.querySelector("#album-three"),
+      title: "Art",
+    },
+  ];
+
   hideImages();
-  const albumOne = document.querySelector("#album-one");
-  const albumTwo = document.querySelector("#album-two");
-  const albumThree = document.querySelector("#album-three");
+  console.log(`${id} clicked!`);
+  deselectMenuItems();
+  element.classList.toggle("left__menu__option--clicked");
 
-  if (value === "my-dog") {
-    albumOne.classList.remove("right__icon__album--hidden");
-  }
-
-  if (value === "outfits") {
-    albumTwo.classList.remove("right__icon__album--hidden");
-  }
-
-  if (value === "art") {
-    albumThree.classList.remove("right__icon__album--hidden");
+  const selectedAlbum = albums.find((album) => album.id === id);
+  if (selectedAlbum) {
+    selectedAlbum.element.classList.remove("right__icon__album--hidden");
+    document.querySelector(".right__header__title").innerHTML =
+      selectedAlbum.title;
   }
 
   console.log("end of change album function !");
-  // need to appropriately remove hidden class i.e. fix doc QS
-  // need to appropriately
 }

@@ -9,9 +9,9 @@ import {
   photoViewerModal,
   findParentId,
   findParent,
-  deselectItems,
   changeAlbum,
 } from "./modules/modal-photo-viewer.js";
+import { notesModal } from "./modules/modal-notes.js";
 
 // banner functionality
 const appleIcon = document.querySelector("#apple-wrapper");
@@ -23,6 +23,9 @@ photoViewerIcon.addEventListener("click", photoViewerModal);
 
 const calcIcon = document.querySelector(".dock__wrap li:nth-child(2)");
 calcIcon.addEventListener("click", calcModal);
+
+const notesIcon = document.querySelector(".dock__wrap li:nth-child(3)");
+notesIcon.addEventListener("click", notesModal);
 
 // Calculator functionality with event delegation
 const modalContainer = document.querySelector("#htmlRef-calc");
@@ -53,27 +56,7 @@ photoMenu.addEventListener("click", function (event) {
   const clickedElementId = findParentId(target);
   const clickedElement = findParent(target);
 
-  console.log(`${clickedElementId} clicked!`);
-  deselectItems();
-  clickedElement.classList.toggle("left__menu__option--clicked");
-  changeAlbum(clickedElementId);
-
-  // if (clickedElementId === "my-dog") {
-  //   console.log(`${clickedElementId} clicked!`);
-  //   deselectItems();
-  //   clickedElement.classList.toggle("left__menu__option--clicked");
-  //   changeAlbum(clickedElementId);
-  // }
-  // if (clickedElementId === "outfits") {
-  //   console.log(`${clickedElementId} clicked!`);
-  //   deselectItems();
-  //   clickedElement.classList.toggle("left__menu__option--clicked");
-  //   changeAlbum(clickedElementId);
-  // }
-  // if (clickedElementId === "art") {
-  //   console.log(`${clickedElementId} clicked!`);
-  //   deselectItems();
-  //   clickedElement.classList.toggle("left__menu__option--clicked");
-  //   changeAlbum(clickedElementId);
-  // }
+  if (clickedElement.classList.contains("left__menu__option")) {
+    changeAlbum(clickedElementId, clickedElement);
+  }
 });
