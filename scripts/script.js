@@ -13,20 +13,70 @@ import {
   imageOpen,
 } from "./modules/modal-photo-viewer.js";
 import { notesModal, saveNote, deleteNote } from "./modules/modal-notes.js";
+import { handleWindowButtons } from "./modules/app-close-handling.js";
 
 // banner functionality
 const appleIcon = document.querySelector("#apple-wrapper");
 appleIcon.addEventListener("click", toggleMenu);
 
-// Dock Modals
-const photoViewerIcon = document.querySelector(".dock__wrap li:nth-child(1)");
-photoViewerIcon.addEventListener("click", photoViewerModal);
+// dock and desktop icons
 
-const calcIcon = document.querySelector(".dock__wrap li:nth-child(2)");
-calcIcon.addEventListener("click", calcModal);
+const appOrder = [
+  {
+    name: "Photos",
+    action: () => {
+      photoViewerModal();
+    },
+  },
+  {
+    name: "Calculator",
+    action: () => {
+      calcModal();
+    },
+  },
+  {
+    name: "Notes",
+    action: () => {
+      notesModal();
+    },
+  },
+];
 
-const notesIcon = document.querySelector(".dock__wrap li:nth-child(3)");
-notesIcon.addEventListener("click", notesModal);
+let openedApp = [];
+
+export const updatedOpenedApp = (value) => {
+  openedApp = [];
+  openedApp.push(value);
+  console.log(openedApp);
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  const iconContainer = document.querySelector(".desktop__container");
+  const dockContainer = document.querySelector(".dock__wrap");
+
+  appOrder.forEach((app) => {
+    const icon = document.createElement("li");
+    icon.textContent = app.name;
+
+    icon.addEventListener("click", () => {
+      app.action();
+    });
+
+    iconContainer.appendChild(icon);
+  });
+
+  appOrder.forEach((app) => {
+    const icon = document.createElement("li");
+    icon.textContent = app.name;
+    icon.classList.add("dock__item");
+
+    icon.addEventListener("click", () => {
+      app.action();
+    });
+
+    dockContainer.appendChild(icon);
+  });
+});
 
 // Calculator functionality with event delegation
 const modalContainer = document.querySelector("#htmlRef-calc");
@@ -60,9 +110,9 @@ photoMenu.addEventListener("click", function (event) {
   if (clickedElement.classList.contains("left__menu__option")) {
     changeAlbum(clickedElementId, clickedElement);
   }
-});
 
-// on click, send through text content number
+  handleWindowButtons(event);
+});
 
 photoMenu.addEventListener("dblclick", function (event) {
   const target = event.target;
@@ -77,8 +127,6 @@ photoMenu.addEventListener("dblclick", function (event) {
 
 const noteContainer = document.querySelector("#htmlRef-notes");
 
-// const saveButton = document.querySelector("#save-button");
-
 noteContainer.addEventListener("click", function (event) {
   const target = event.target;
   const check = document.querySelector(".notes__list__item");
@@ -91,4 +139,6 @@ noteContainer.addEventListener("click", function (event) {
       deleteNote();
     }
   }
+
+  handleWindowButtons(event);
 });

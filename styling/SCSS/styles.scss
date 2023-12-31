@@ -132,23 +132,23 @@
     ); /* Adjust the opacity for the glassy effect */
     box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1); /* Shadow for the glassy effect */
     backdrop-filter: blur(10px);
+  }
 
-    li {
-      width: 45px;
-      height: 45px;
-      text-align: center;
-      line-height: 50px;
-      background-color: black;
+  &__item {
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 50px;
+    background-color: black;
 
-      @include mixin.tablet {
-        height: 40px;
-        width: 40px;
-      }
+    @include mixin.tablet {
+      height: 40px;
+      width: 40px;
+    }
 
-      @include mixin.computer {
-        height: 50px;
-        width: 50px;
-      }
+    @include mixin.computer {
+      height: 50px;
+      width: 50px;
     }
   }
 }
@@ -169,7 +169,6 @@
 }
 
 #htmlRef-modal {
-  position: absolute;
   align-self: center;
   z-index: 7;
 }

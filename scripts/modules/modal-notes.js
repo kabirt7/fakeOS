@@ -1,7 +1,11 @@
+import { updatedOpenedApp } from "../script.js";
+import { handleDockIcons } from "./app-close-handling.js";
+
 export const notesModal = () => {
   const html = document.querySelector("#htmlRef-notes");
-  html.innerHTML === ""
-    ? (html.innerHTML = `
+  if (html.innerHTML === "") {
+    handleDockIcons();
+    html.innerHTML = `
     <div class="notes">
 
      <section class="notes__banner">
@@ -10,8 +14,8 @@ export const notesModal = () => {
        <li class="yellow"></li>
        <li class="green"></li>
       </ul>
-      <button class="green" id="save-button"></button>
-      <button class="red" id="delete-button"></button>
+      <button id="save-button"></button>
+      <button id="delete-button"></button>
      </section> 
      <section class="notes__container">
        <ul class="notes__list">
@@ -24,8 +28,12 @@ export const notesModal = () => {
        </main>
      </section>
     </div>
-    `)
-    : (html.innerHTML = "");
+    `;
+
+    updatedOpenedApp("Notes");
+  } else {
+    html.innerHTML = "";
+  }
 };
 
 // const tmp = noteInput.textContent;

@@ -120,7 +120,7 @@
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1); /* Shadow for the glassy effect */
   backdrop-filter: blur(10px);
 }
-.dock__wrap li {
+.dock__item {
   width: 45px;
   height: 45px;
   text-align: center;
@@ -128,13 +128,13 @@
   background-color: black;
 }
 @media only screen and (min-width: 1000px) and (max-width: 1800px) {
-  .dock__wrap li {
+  .dock__item {
     height: 40px;
     width: 40px;
   }
 }
 @media only screen and (min-width: 1800px) {
-  .dock__wrap li {
+  .dock__item {
     height: 50px;
     width: 50px;
   }
