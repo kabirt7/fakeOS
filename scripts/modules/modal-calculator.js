@@ -9,9 +9,9 @@ export const calcModal = () => {
     <section id="top">
       <div class="calculator__banner">
        <ul>
-        <li>x</li>
-        <li>-</li>
-        <li>+</li>
+        <li class="red"></li>
+        <li class="yellow"></li>
+        <li class="green"></li>
        </ul>
       </div> 
       <div class="calculator__display"><p class="calculator__display__text"></p></div><div class="calculator__expression"></div>

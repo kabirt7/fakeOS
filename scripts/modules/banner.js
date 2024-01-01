@@ -1,7 +1,9 @@
 // Banner Menu Toggle
 
 export const toggleMenu = () => {
-  const modifiedElement = document.querySelector("#apple-menu");
-  modifiedElement.classList.toggle("banner__menu--hidden");
-  modifiedElement.classList.toggle("banner__menu--show");
+  const modal = document.querySelector("#apple-menu");
+  const clickedElement = document.querySelector("#apple-wrapper");
+  modal.classList.toggle("banner__menu--hidden");
+  modal.classList.toggle("banner__menu--show");
+  clickedElement.classList.toggle("banner__list__item--clicked");
 };

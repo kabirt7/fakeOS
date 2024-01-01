@@ -1,10 +1,12 @@
 .photo-viewer {
   width: 70vw;
   height: 60vh;
-  background-color: aliceblue;
+  background-color: rgb(232, 232, 232);
   display: flex;
   flex-direction: row;
   border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(60, 64, 67, 0.5),
+    0 24px 48px rgba(60, 64, 67, 0.6);
 }
 
 .left {
@@ -14,7 +16,7 @@
   //   justify-content: flex-start;
   &__header {
     height: 50px;
-    background-color: rgb(241, 247, 190);
+
     display: flex;
     justify-content: flex-start;
     padding-left: 19px;
@@ -44,12 +46,17 @@
       list-style-type: none;
       width: 160px;
       padding: 3px 10px 3px 10px;
-      background-color: rgb(245, 220, 245);
+
       border-radius: 4px;
       gap: 5px;
 
+      div {
+        height: 15px;
+        width: 15px;
+      }
+
       &--clicked {
-        background-color: rgb(255, 0, 179);
+        background-color: rgb(175, 175, 175);
       }
     }
   }
@@ -57,12 +64,12 @@
 
 .right {
   flex: 1;
-  background-color: rgb(242, 201, 252);
+
   border-radius: 0 12px 12px 0;
 
   &__header {
     height: 50px;
-    background-color: rgb(198, 190, 247);
+    background-color: rgb(246, 246, 246);
     display: flex;
     align-items: center;
     border-radius: 0 12px 0 0;
@@ -74,26 +81,27 @@
   }
 
   &__icon {
-    background-color: aliceblue;
     width: 50px;
     height: 50px;
 
     &__container {
-      background-color: rgb(249, 168, 168);
-      height: calc(100% - 90px);
+      background-color: rgb(255, 255, 255);
+      height: calc(100% - 80px);
       border-radius: 0 0 12px 0;
       list-style-type: none;
       display: flex;
       flex-wrap: wrap;
       gap: 80px;
-      padding-left: 50px;
-      padding-top: 40px;
+      padding-left: 30px;
+      padding-top: 30px;
     }
 
     &__album {
       display: flex;
-      gap: 80px;
+      flex-direction: column;
       flex-wrap: wrap;
+      justify-content: flex-start;
+
       &--hidden {
         display: none;
       }
@@ -125,5 +133,10 @@
   position: absolute;
   height: 500px;
   width: 500px;
-  background-image: url("edit.jpg");
+  background-image: url("../../src/edit.jpg");
+}
+
+.photo-icon {
+  background-image: url("../../src/Icon-Photo.png");
+  background-size: cover;
 }

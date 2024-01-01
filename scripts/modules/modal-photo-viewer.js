@@ -15,9 +15,9 @@ export const photoViewerModal = () => {
       </ul>
       <div class="left__menu__title">Albums</div>
        <ul class="left__menu">
-        <div class="left__menu__option left__menu__option--clicked" id="my-dog"><div class="red"></div><li>My Dog</li></div>
-        <div class="left__menu__option" id="outfits"><div class="red"></div><li>Outfits</li></div>
-        <div class="left__menu__option" id="art"><div class="red"></div><li>Art</li></div>
+        <div class="left__menu__option left__menu__option--clicked" id="my-dog"><div class="photo-icon"></div><li>My Dog</li></div>
+        <div class="left__menu__option" id="outfits"><div class="photo-icon"></div><li>Outfits</li></div>
+        <div class="left__menu__option" id="art"><div class="photo-icon"></div><li>Art</li></div>
        </ul>
      </section> 
      <section class="right">
@@ -28,16 +28,12 @@ export const photoViewerModal = () => {
       </div>
       <ul class="right__icon__container">
        <div class="right__icon__album" id="album-one">
-       <li class="right__icon" id="Img-1"></li>
-       <li class="right__icon" id="Img-2"></li>
+       <li class="right__icon photo-icon" id="Img-1"></li>
+       <p>Image 1</p>
        </div>
        <div class="right__icon__album right__icon__album--hidden" id="album-two">
-       <li class="right__icon" id="Img-3"></li>
-       <li class="right__icon" id="Img-4"></li>
        </div>
        <div class="right__icon__album right__icon__album--hidden" id="album-three">
-       <li class="right__icon" id="Img-5"></li>
-       <li class="right__icon" id="Img-6"></li>
        </div>
       </ul>
      </section>

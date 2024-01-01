@@ -14,8 +14,8 @@ export const notesModal = () => {
        <li class="yellow"></li>
        <li class="green"></li>
       </ul>
-      <button id="save-button"></button>
-      <button id="delete-button"></button>
+      <button id="save-button">Save</button>
+      <button id="delete-button">Delete</button>
      </section> 
      <section class="notes__container">
        <ul class="notes__list">

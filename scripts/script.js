@@ -40,6 +40,12 @@ const appOrder = [
       notesModal();
     },
   },
+  {
+    name: "Grey1",
+  },
+  {
+    name: "Grey2",
+  },
 ];
 
 let openedApp = [];
@@ -54,21 +60,32 @@ document.addEventListener("DOMContentLoaded", function () {
   const iconContainer = document.querySelector(".desktop__container");
   const dockContainer = document.querySelector(".dock__wrap");
 
-  appOrder.forEach((app) => {
+  appOrder.forEach((app, index) => {
     const icon = document.createElement("li");
-    icon.textContent = app.name;
+    const title = document.createElement("p");
+    title.textContent = app.name;
+
+    app.image = `Icon-Img-${index + 1}`;
+
+    icon.style.backgroundImage = `url('../src/${app.image}.png')`;
+    icon.style.backgroundSize = "cover";
 
     icon.addEventListener("click", () => {
-      app.action();
+      if (app.action) {
+        app.action();
+      }
     });
-
+    icon.appendChild(title);
     iconContainer.appendChild(icon);
   });
 
   appOrder.forEach((app) => {
     const icon = document.createElement("li");
-    icon.textContent = app.name;
+    // icon.textContent = app.name;
     icon.classList.add("dock__item");
+
+    icon.style.backgroundImage = `url('../src/${app.image}.png')`;
+    icon.style.backgroundSize = "cover";
 
     icon.addEventListener("click", () => {
       app.action();
@@ -79,10 +96,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Calculator functionality with event delegation
-const modalContainer = document.querySelector("#htmlRef-calc");
+const calcContainer = document.querySelector("#htmlRef-calc");
 
-modalContainer.addEventListener("click", function (event) {
+calcContainer.addEventListener("click", function (event) {
   const target = event.target;
+  handleWindowButtons(event);
 
   if (target.tagName === "TD") {
     console.log(`${target.textContent} clicked!`);
@@ -100,9 +118,9 @@ modalContainer.addEventListener("click", function (event) {
 
 // Photo Viewer Functionality
 
-const photoMenu = document.querySelector("#htmlRef-photo");
+const photoContainer = document.querySelector("#htmlRef-photo");
 
-photoMenu.addEventListener("click", function (event) {
+photoContainer.addEventListener("click", function (event) {
   const target = event.target;
   const clickedElementId = findParentId(target);
   const clickedElement = findParent(target);
@@ -114,7 +132,7 @@ photoMenu.addEventListener("click", function (event) {
   handleWindowButtons(event);
 });
 
-photoMenu.addEventListener("dblclick", function (event) {
+photoContainer.addEventListener("dblclick", function (event) {
   const target = event.target;
   console.log("doubleclicked");
 

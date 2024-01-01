@@ -1,5 +1,7 @@
 export function handleWindowButtons(event) {
   const target = event.target;
+  console.log("arrived to hwb");
+  console.log(event);
 
   if (
     target.classList.contains("red") ||
@@ -15,6 +17,7 @@ export function handleDockIcons() {
 }
 
 function closeAll() {
+  console.log("got to close all");
   const modals = [
     document.querySelector("#htmlRef-photo"),
     document.querySelector("#htmlRef-calc"),

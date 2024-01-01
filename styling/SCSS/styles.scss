@@ -30,17 +30,32 @@
 .banner {
   width: 100vw;
   position: absolute;
+  z-index: 9;
   top: 0;
-  background: rgba(173, 216, 230, 0.3);
+  background: rgba(
+    99,
+    99,
+    99,
+    0.3
+  ); /* Adjust the opacity for the glassy effect */
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5); /* Shadow for the glassy effect */
+  backdrop-filter: blur(10px);
 
   &__list {
     opacity: 100%;
     display: flex;
-    padding-left: 0px;
+    padding-left: 5px;
     height: 20px;
     justify-content: flex-start;
     align-items: center;
     list-style-type: none;
+    gap: 10px;
+
+    &__item {
+      &--clicked {
+        background-color: rgb(95, 95, 95, 0.3);
+      }
+    }
   }
 
   &__menu {
@@ -50,7 +65,19 @@
     &--show {
       position: absolute;
       top: 20px;
+      left: 5px;
       z-index: 10;
+
+      border-radius: 4px;
+      top: 25px;
+      background: rgba(
+        255,
+        255,
+        255,
+        0.1
+      ); /* Adjust the opacity for the glassy effect */
+      box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1); /* Shadow for the glassy effect */
+      backdrop-filter: blur(10px);
       ul {
         list-style-type: none;
         padding-left: 5px;
@@ -59,7 +86,7 @@
   }
 
   li {
-    padding: 10px 10px;
+    padding: 0px 10px 0 10px;
     font-size: 15px;
   }
 }
@@ -67,25 +94,48 @@
 .desktop {
   height: 100vh;
   width: 100%;
-  background-color: rgb(196, 255, 196);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: -6;
 
+  background-image: url("../../src/Background-Image.jpg");
+  background-size: cover;
+
   &__container {
-    height: calc(100% - 20px);
+    padding-top: 20px;
+    height: 100%;
     width: 100vw;
     position: absolute;
     display: flex;
     flex-direction: column-reverse;
     list-style-type: none;
-    top: 20px;
-    background-color: rgb(255, 255, 198);
     z-index: 0;
     align-items: flex-end;
     justify-content: flex-end;
+    padding-right: 30px;
+    padding-top: 10px;
+    gap: 25px;
+
+    li {
+      height: 50px;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      p {
+        padding: 50px 0 0 0;
+      }
+    }
+    li:nth-child(3) {
+      margin-top: 20px;
+    }
+
+    :nth-child(4),
+    :nth-child(5) {
+      display: none;
+    }
   }
 }
 
@@ -135,20 +185,19 @@
   }
 
   &__item {
-    width: 45px;
-    height: 45px;
+    height: 30px;
+    width: 30px;
     text-align: center;
     line-height: 50px;
-    background-color: black;
 
     @include mixin.tablet {
-      height: 40px;
-      width: 40px;
+      height: 50px;
+      width: 50px;
     }
 
     @include mixin.computer {
-      height: 50px;
-      width: 50px;
+      height: 60px;
+      width: 60px;
     }
   }
 }
