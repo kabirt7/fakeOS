@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .red {
@@ -89,6 +90,11 @@
     padding: 0px 10px 0 10px;
     font-size: 15px;
   }
+}
+
+#clock {
+  position: absolute;
+  right: 0;
 }
 
 .desktop {
@@ -185,19 +191,19 @@
   }
 
   &__item {
-    height: 30px;
-    width: 30px;
+    height: 50px;
+    width: 50px;
     text-align: center;
     line-height: 50px;
 
     @include mixin.tablet {
-      height: 50px;
-      width: 50px;
+      height: 65px;
+      width: 65px;
     }
 
     @include mixin.computer {
-      height: 60px;
-      width: 60px;
+      height: 85px;
+      width: 85px;
     }
   }
 }

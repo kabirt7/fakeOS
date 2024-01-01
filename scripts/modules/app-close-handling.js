@@ -9,6 +9,8 @@ export function handleWindowButtons(event) {
     target.classList.contains("green")
   ) {
     closeAll();
+  } else {
+    return;
   }
 }
 

@@ -14,6 +14,7 @@ import {
 } from "./modules/modal-photo-viewer.js";
 import { notesModal, saveNote, deleteNote } from "./modules/modal-notes.js";
 import { handleWindowButtons } from "./modules/app-close-handling.js";
+import { updateTime } from "./modules/clock.js";
 
 // banner functionality
 const appleIcon = document.querySelector("#apple-wrapper");
@@ -159,4 +160,8 @@ noteContainer.addEventListener("click", function (event) {
   }
 
   handleWindowButtons(event);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateTime();
 });
