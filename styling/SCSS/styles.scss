@@ -1,0 +1,245 @@
+@use "./mixin";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.red {
+  background-color: rgb(249, 94, 94);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  list-style-type: none;
+}
+.yellow {
+  background-color: rgb(247, 221, 119);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  list-style-type: none;
+}
+.green {
+  background-color: rgb(113, 249, 127);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  list-style-type: none;
+}
+
+.banner {
+  width: 100vw;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  background: rgba(
+    99,
+    99,
+    99,
+    0.3
+  ); /* Adjust the opacity for the glassy effect */
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5); /* Shadow for the glassy effect */
+  backdrop-filter: blur(10px);
+
+  &__list {
+    opacity: 100%;
+    display: flex;
+    padding-left: 5px;
+    height: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    list-style-type: none;
+    gap: 10px;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      &--clicked {
+        background-color: rgb(95, 95, 95, 0.3);
+      }
+      img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
+  &__menu {
+    &--hidden {
+      display: none;
+    }
+    &--show {
+      position: absolute;
+      top: 20px;
+      left: 5px;
+      z-index: 10;
+      width: 200px;
+      border-radius: 4px;
+      top: 25px;
+      background: rgba(
+        255,
+        255,
+        255,
+        0.1
+      ); /* Adjust the opacity for the glassy effect */
+      box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1); /* Shadow for the glassy effect */
+      backdrop-filter: blur(10px);
+      ul {
+        list-style-type: none;
+        padding: 5px;
+
+        li {
+          padding-top: 5px;
+          padding-bottom: 5px;
+          padding-left: 3px;
+          border-radius: 5px;
+        }
+        li:hover {
+          background-color: rgb(0, 102, 255);
+          color: white;
+        }
+      }
+    }
+  }
+
+  li {
+    padding: 0px 10px 0 10px;
+    font-size: 15px;
+  }
+}
+
+#clock {
+  position: absolute;
+  right: 0;
+}
+
+.desktop {
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: -6;
+
+  background-image: url("../../src/Background-Image.jpg");
+  background-size: cover;
+
+  &__container {
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    flex-direction: column-reverse;
+    list-style-type: none;
+    z-index: 0;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: 30px;
+    padding-top: 30px;
+    gap: 40px;
+
+    li {
+      height: 50px;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      p {
+        padding: 50px 0 0 0;
+      }
+    }
+    li:nth-child(3) {
+      margin-top: 20px;
+    }
+
+    :nth-child(4),
+    :nth-child(5) {
+      display: none;
+    }
+  }
+}
+
+.dock {
+  &__container {
+    height: 80px;
+
+    z-index: 998;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 5px;
+    width: 100%;
+
+    @include mixin.tablet {
+      height: 100px;
+      bottom: 10px;
+    }
+
+    @include mixin.computer {
+      height: 120px;
+      bottom: 10px;
+    }
+  }
+
+  &__wrap {
+    padding: 0 20px;
+    margin-top: 2.5px;
+    display: flex;
+    list-style-type: none;
+    width: auto;
+    background-color: rgb(202, 186, 255);
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 18px;
+
+    background: rgba(
+      255,
+      255,
+      255,
+      0.3
+    ); /* Adjust the opacity for the glassy effect */
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1); /* Shadow for the glassy effect */
+    backdrop-filter: blur(10px);
+  }
+
+  &__item {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+
+    @include mixin.tablet {
+      height: 65px;
+      width: 65px;
+    }
+
+    @include mixin.computer {
+      height: 85px;
+      width: 85px;
+    }
+  }
+}
+
+#htmlRef-calc {
+  align-self: center;
+  z-index: 5;
+}
+
+#htmlRef-photo {
+  align-self: center;
+  z-index: 5;
+}
+
+#htmlRef-notes {
+  align-self: center;
+  z-index: 5;
+}
+
+#htmlRef-modal {
+  align-self: center;
+  z-index: 7;
+}

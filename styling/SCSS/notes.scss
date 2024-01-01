@@ -1,0 +1,127 @@
+.notes {
+  width: 70vw;
+  height: 60vh;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(60, 64, 67, 0.5),
+    0 24px 48px rgba(60, 64, 67, 0.6);
+
+  &__banner {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    background-color: rgb(232, 232, 232);
+    border-radius: 12px 12px 0 0;
+    gap: 10px;
+  }
+
+  &__window-menu {
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 19px;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__container {
+    display: flex;
+    height: calc(100% - 50px);
+  }
+
+  &__list {
+    height: calc(100% - 10px);
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    padding-top: 10px;
+    flex-direction: column;
+    list-style-type: none;
+    flex: 0 0 200px;
+    background-color: white;
+    border-radius: 0 0 0 12px;
+    overflow: auto;
+    border-right: 1px solid rgb(166, 166, 166);
+    gap: 10px;
+
+    &__item {
+      display: flex;
+      align-items: flex-start;
+      list-style-type: none;
+      width: 160px;
+      height: 15%;
+      padding: 3px 10px 3px 10px;
+      background-color: rgb(255, 248, 198);
+      border-radius: 4px;
+      gap: 5px;
+      overflow: auto;
+      flex-shrink: 0;
+
+      &--clicked {
+        background-color: aqua;
+      }
+    }
+  }
+
+  &__create {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+    background-color: blanchedalmond;
+    border-radius: 0 0 12px 0;
+
+    textarea {
+      border: none;
+      height: 100%;
+      outline: none;
+      resize: none;
+      padding-top: 10px;
+      padding-left: 10px;
+      border-radius: 0 0 12px 0;
+
+      &:focus {
+        border-color: transparent;
+      }
+    }
+  }
+
+  &__right {
+    margin-top: 50px;
+    flex: 1;
+    background-color: rgb(242, 201, 252);
+    border-radius: 0 12px 12px 0;
+
+    &__header {
+      height: 50px;
+      background-color: rgb(198, 190, 247);
+      display: flex;
+      align-items: center;
+      border-radius: 0 12px 0 0;
+      padding-left: 10px;
+
+      &__title {
+        padding-left: 7px;
+      }
+    }
+
+    &__container {
+      background-color: rgb(249, 168, 168);
+      height: calc(100% - 50px);
+      border-radius: 0 0 12px 0;
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 80px;
+      padding-left: 50px;
+      padding-top: 40px;
+    }
+  }
+}
+
+#save-button,
+#delete-button {
+  padding: 5px;
+}
