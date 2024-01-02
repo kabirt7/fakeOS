@@ -27,7 +27,10 @@ function closeAll() {
     document.querySelector("#htmlRef-modal"),
   ];
 
-  modals.forEach((value) => (value.innerHTML = ""));
+  for (let i = 0; i < modals.length - 1; i++) {
+    modals[i].innerHTML = "";
+  }
+  // modals.forEach((value) => (value.innerHTML = ""));
 
-  modals[3].classList = [];
+  modals[3].style.display = "none";
 }

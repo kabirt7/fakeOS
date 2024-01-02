@@ -1,8 +1,10 @@
+@use "./mixin";
+
 .calculator {
   display: flex;
   flex-direction: column;
-  height: 35vh;
-  width: 12vw;
+  height: 200px;
+  width: 125px;
   border-radius: 10px;
   box-shadow: 0 12px 24px rgba(60, 64, 67, 0.5),
     0 24px 48px rgba(60, 64, 67, 0.6);
@@ -15,13 +17,23 @@
   // box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1); /* Shadow for the glassy effect */
   backdrop-filter: blur(10px);
 
+  @include mixin.tablet {
+    height: 410px;
+    width: 250px;
+  }
+
+  @include mixin.computer {
+    height: 550px;
+    width: 335px;
+  }
+
   &__banner {
-    height: 15px;
+    flex: 1;
     padding-left: 10px;
   }
 
   &__display {
-    height: 45px;
+    height: 70%;
     position: relative;
     color: white;
 
@@ -29,7 +41,11 @@
       position: absolute;
       bottom: 5px;
       right: 5px;
-      font-size: x-large;
+      font-size: 2em;
+
+      @include mixin.phone {
+        font-size: medium;
+      }
     }
   }
 
@@ -51,6 +67,8 @@
 #top {
   height: 23%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #bottom {
@@ -73,6 +91,7 @@
     width: 25%;
     text-align: center;
     background: rgba(158, 158, 158, 0.55);
+    font-size: 1em;
   }
 }
 
