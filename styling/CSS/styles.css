@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: default;
 }
 
 .red {
@@ -41,7 +42,7 @@
   opacity: 100%;
   display: flex;
   padding-left: 5px;
-  height: 20px;
+  height: 25px;
   justify-content: flex-start;
   align-items: center;
   list-style-type: none;
@@ -52,7 +53,7 @@
   align-items: center;
 }
 .banner__list__item--clicked {
-  background-color: rgba(95, 95, 95, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 .banner__list__item img {
   width: 15px;
@@ -88,7 +89,7 @@
   color: white;
 }
 .banner li {
-  padding: 0px 10px 0 10px;
+  padding: 1.5px 10px 1.5px 10px;
   font-size: 15px;
 }
 
@@ -119,7 +120,6 @@
   align-items: flex-end;
   justify-content: flex-end;
   padding-right: 30px;
-  padding-top: 30px;
   gap: 40px;
 }
 .desktop__container li {
@@ -127,12 +127,26 @@
   width: 50px;
   display: flex;
   justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: small;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(0, 0, 0, 0.9);
 }
 .desktop__container li p {
   padding: 50px 0 0 0;
 }
 .desktop__container li:nth-child(3) {
-  margin-top: 20px;
+  margin-top: 30px;
+}
+@media only screen and (min-width: 1800px) {
+  .desktop__container li:nth-child(3) {
+    margin-top: 30px;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1800px) {
+  .desktop__container li:nth-child(3) {
+    margin-top: 40px;
+  }
 }
 .desktop__container :nth-child(4),
 .desktop__container :nth-child(5) {
@@ -140,7 +154,7 @@
 }
 
 .dock__container {
-  height: 80px;
+  height: 70px;
   z-index: 998;
   display: flex;
   justify-content: center;
@@ -150,7 +164,7 @@
 }
 @media only screen and (min-width: 1000px) and (max-width: 1800px) {
   .dock__container {
-    height: 100px;
+    height: 90px;
     bottom: 10px;
   }
 }
@@ -170,28 +184,28 @@
   height: 90%;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 5px;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.3); /* Adjust the opacity for the glassy effect */
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1); /* Shadow for the glassy effect */
   backdrop-filter: blur(10px);
 }
 .dock__item {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   text-align: center;
   line-height: 50px;
 }
 @media only screen and (min-width: 1000px) and (max-width: 1800px) {
   .dock__item {
-    height: 65px;
-    width: 65px;
+    height: 75px;
+    width: 75px;
   }
 }
 @media only screen and (min-width: 1800px) {
   .dock__item {
-    height: 85px;
-    width: 85px;
+    height: 95px;
+    width: 95px;
   }
 }
 
@@ -212,5 +226,8 @@
 
 #htmlRef-modal {
   align-self: center;
-  z-index: 7;
+  z-index: 10;
+  position: absolute;
+  height: 50vh;
+  width: 50vh;
 }

@@ -8,9 +8,8 @@ import {
 import {
   photoViewerModal,
   findParentId,
-  findParent,
   changeAlbum,
-  imageOpen,
+  findParent,
 } from "./modules/modal-photo-viewer.js";
 import { notesModal, saveNote, deleteNote } from "./modules/modal-notes.js";
 import { handleWindowButtons } from "./modules/app-close-handling.js";
@@ -101,11 +100,8 @@ const calcContainer = document.querySelector("#htmlRef-calc");
 
 calcContainer.addEventListener("click", function (event) {
   const target = event.target;
-  handleWindowButtons(event);
 
   if (target.tagName === "TD") {
-    console.log(`${target.textContent} clicked!`);
-
     if (/[0-9.]/.test(target.dataset.value)) {
       appendToDisplay(target.dataset.value);
       evalExp(target.dataset.value);
@@ -115,6 +111,7 @@ calcContainer.addEventListener("click", function (event) {
       evalExp(target.dataset.value);
     }
   }
+  handleWindowButtons(event);
 });
 
 // Photo Viewer Functionality
@@ -127,7 +124,7 @@ photoContainer.addEventListener("click", function (event) {
   const clickedElement = findParent(target);
 
   if (clickedElement.classList.contains("left__menu__option")) {
-    changeAlbum(clickedElementId, clickedElement);
+    changeAlbum(clickedElementId);
   }
 
   handleWindowButtons(event);
@@ -163,5 +160,18 @@ noteContainer.addEventListener("click", function (event) {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  updateTime();
+  updateTime(); // Initial call
+
+  // Set up a recurring update every second using setInterval
+  setInterval(() => {
+    updateTime();
+  }, 1000);
+});
+
+const photoModal = document.querySelector("#htmlRef-modal");
+
+photoModal.addEventListener("click", (event) => {
+  if (event.target.tagName === "DIV") {
+    photoModal.style.display = "none";
+  }
 });
