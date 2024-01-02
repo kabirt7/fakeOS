@@ -119,12 +119,14 @@
   z-index: 0;
   align-items: flex-end;
   justify-content: flex-end;
-  padding-right: 30px;
+  margin-right: 20px;
   gap: 40px;
 }
 .desktop__container li {
-  height: 50px;
-  width: 50px;
+  padding-right: 30px;
+  height: 55px;
+  width: 30px;
+  background-size: "cover";
   display: flex;
   justify-content: center;
   color: white;
@@ -133,7 +135,7 @@
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(0, 0, 0, 0.9);
 }
 .desktop__container li p {
-  padding: 50px 0 0 0;
+  padding: 59px 0 0 28px;
 }
 .desktop__container li:nth-child(3) {
   margin-top: 30px;
@@ -155,12 +157,12 @@
 
 .dock__container {
   height: 70px;
+  width: 100vw;
   z-index: 998;
   display: flex;
   justify-content: center;
   position: fixed;
   bottom: 5px;
-  width: 100%;
 }
 @media only screen and (min-width: 1000px) and (max-width: 1800px) {
   .dock__container {

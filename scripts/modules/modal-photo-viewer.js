@@ -15,45 +15,28 @@ export function findParent(element) {
 const albums = [
   {
     id: "album-1",
-    title: "My Dog",
+    title: "Jewellery",
     images: [
       {
         pic: "../../src/edit.jpg",
-        name: "My-Dog-Image-1",
-      },
-      {
-        pic: "../../src/edit.jpg",
-        name: "My-Dog-Image-2",
+        name: "Jewellery-Image-1",
       },
     ],
   },
   {
     id: "album-2",
-    title: "Outfits",
+    title: "Outfit",
     images: [
       {
-        pic: "../../src/edit.jpg",
-        name: "Outfits-Image-1",
-      },
-      {
-        pic: "../../src/edit.jpg",
-        name: "Outfits-Image-2",
+        pic: "../../src/Outfit.jpg",
+        name: "Outfit-Image-1",
       },
     ],
   },
   {
     id: "album-3",
     title: "Art",
-    images: [
-      {
-        pic: "../../src/edit.jpg",
-        name: "Art-Image-1",
-      },
-      {
-        pic: "../../src/edit.jpg",
-        name: "Art-Image-2",
-      },
-    ],
+    images: [],
   },
 ];
 
@@ -78,7 +61,7 @@ export const photoViewerModal = () => {
       <div class="right__header">
        <button class="right__button right__button__left"></button>
        <button class="right__button right__button__right"></button>
-       <h3 class="right__header__title">My Dog</h3>
+       <h3 class="right__header__title">Jewellery</h3>
       </div>
       <ul class="right__icon__container">
       </ul>

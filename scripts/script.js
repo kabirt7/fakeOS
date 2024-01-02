@@ -56,7 +56,7 @@ export const updatedOpenedApp = (value) => {
   console.log(openedApp);
 };
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const iconContainer = document.querySelector(".desktop__container");
   const dockContainer = document.querySelector(".dock__wrap");
 
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Calculator functionality with event delegation
 const calcContainer = document.querySelector("#htmlRef-calc");
 
-calcContainer.addEventListener("click", function (event) {
+calcContainer.addEventListener("click", (event) => {
   const target = event.target;
 
   if (target.tagName === "TD") {
@@ -118,7 +118,7 @@ calcContainer.addEventListener("click", function (event) {
 
 const photoContainer = document.querySelector("#htmlRef-photo");
 
-photoContainer.addEventListener("click", function (event) {
+photoContainer.addEventListener("click", (event) => {
   const target = event.target;
   const clickedElementId = findParentId(target);
   const clickedElement = findParent(target);
@@ -130,7 +130,7 @@ photoContainer.addEventListener("click", function (event) {
   handleWindowButtons(event);
 });
 
-photoContainer.addEventListener("dblclick", function (event) {
+photoContainer.addEventListener("dblclick", (event) => {
   const target = event.target;
   console.log("doubleclicked");
 
@@ -143,7 +143,7 @@ photoContainer.addEventListener("dblclick", function (event) {
 
 const noteContainer = document.querySelector("#htmlRef-notes");
 
-noteContainer.addEventListener("click", function (event) {
+noteContainer.addEventListener("click", (event) => {
   const target = event.target;
   const check = document.querySelector(".notes__list__item");
   if (target.id === "save-button") {
