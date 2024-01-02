@@ -1,7 +1,7 @@
 .calculator {
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 190px;
   width: 125px;
   border-radius: 10px;
   box-shadow: 0 12px 24px rgba(60, 64, 67, 0.5), 0 24px 48px rgba(60, 64, 67, 0.6);
@@ -10,13 +10,13 @@
 }
 @media only screen and (min-width: 1000px) and (max-width: 1800px) {
   .calculator {
-    height: 410px;
+    height: 380px;
     width: 250px;
   }
 }
 @media only screen and (min-width: 1800px) {
   .calculator {
-    height: 550px;
+    height: 500px;
     width: 335px;
   }
 }

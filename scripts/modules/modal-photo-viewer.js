@@ -140,14 +140,6 @@ export const photoViewerModal = () => {
             // photoModal.style.backgroundColor = "magenta";
           }
         });
-
-        photoAlbum.addEventListener("click", (event) => {
-          if (event.target.tagName === "DIV") {
-            alert("hi");
-            photoModal.style.display = "none";
-            alert("hi");
-          }
-        });
       });
     });
 

@@ -3,7 +3,7 @@
 .calculator {
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 190px;
   width: 125px;
   border-radius: 10px;
   box-shadow: 0 12px 24px rgba(60, 64, 67, 0.5),
@@ -18,12 +18,12 @@
   backdrop-filter: blur(10px);
 
   @include mixin.tablet {
-    height: 410px;
+    height: 380px;
     width: 250px;
   }
 
   @include mixin.computer {
-    height: 550px;
+    height: 500px;
     width: 335px;
   }
 
