@@ -10,6 +10,7 @@ import {
   findParentId,
   changeAlbum,
   findParent,
+  generateAlbums,
 } from "./modules/modal-photo-viewer.js";
 import { notesModal, saveNote, deleteNote } from "./modules/modal-notes.js";
 import { handleWindowButtons } from "./modules/app-close-handling.js";
@@ -50,13 +51,14 @@ const appOrder = [
 
 let openedApp = [];
 
-export const updatedOpenedApp = (value) => {
-  openedApp = [];
-  openedApp.push(value);
-  console.log(openedApp);
-};
+// export const updatedOpenedApp = (value) => {
+//   openedApp = [];
+//   openedApp.push(value);
+//   console.log(openedApp);
+// };
 
 document.addEventListener("DOMContentLoaded", () => {
+  generateAlbums();
   const iconContainer = document.querySelector(".desktop__container");
   const dockContainer = document.querySelector(".dock__wrap");
 
@@ -171,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const photoModal = document.querySelector("#htmlRef-modal");
 
 photoModal.addEventListener("click", (event) => {
-  if (event.target.tagName === "DIV") {
-    photoModal.style.display = "none";
+  if (event.target.tagName === "LI") {
+    photoModal.classList.add("hidden");
   }
 });

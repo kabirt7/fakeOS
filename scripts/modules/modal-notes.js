@@ -1,38 +1,13 @@
-import { updatedOpenedApp } from "../script.js";
-import { handleDockIcons } from "./app-close-handling.js";
+// import { updatedOpenedApp } from "../script.js";
+import { closeModals } from "./app-close-handling.js";
 
 export const notesModal = () => {
+  closeModals();
   const html = document.querySelector("#htmlRef-notes");
-  if (html.innerHTML === "") {
-    handleDockIcons();
-    html.innerHTML = `
-    <div class="notes">
-
-     <section class="notes__banner">
-      <ul class="notes__window-menu">
-       <li class="red"></li>
-       <li class="yellow"></li>
-       <li class="green"></li>
-      </ul>
-      <button id="save-button">Save</button>
-      <button id="delete-button">Delete</button>
-     </section> 
-     <section class="notes__container">
-       <ul class="notes__list">
-        <li class="notes__list__item">Note 1</li>
-        <li class="notes__list__item">Note 2</li>
-        <li class="notes__list__item">Note 3</li>
-       </ul>
-       <main class="notes__create">
-        <textarea class="notes__create__input"></textarea>
-       </main>
-     </section>
-    </div>
-    `;
-
-    updatedOpenedApp("Notes");
+  if (html.classList.contains("hidden")) {
+    html.classList.remove("hidden");
   } else {
-    html.innerHTML = "";
+    html.classList.add("hidden");
   }
 };
 

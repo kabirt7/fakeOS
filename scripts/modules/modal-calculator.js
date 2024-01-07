@@ -1,60 +1,14 @@
-import { updatedOpenedApp } from "../script.js";
-import { handleDockIcons } from "./app-close-handling.js";
+// import { updatedOpenedApp } from "../script.js";
+import { closeModals } from "./app-close-handling.js";
 
 export const calcModal = () => {
+  closeModals();
   const html = document.querySelector("#htmlRef-calc");
-  if (html.innerHTML === "") {
-    handleDockIcons();
-    html.innerHTML = `<div class="calculator">
-    <section id="top">
-      <div class="calculator__banner">
-       <ul>
-        <li class="red"></li>
-        <li class="yellow"></li>
-        <li class="green"></li>
-       </ul>
-      </div> 
-      <div class="calculator__display"><p class="calculator__display__text"></p></div><div class="calculator__expression"></div>
-    </section>
-    <section id="bottom">
-      <table>
-        <tr>
-          <td id="reset" data-value="AC">AC</td>
-          <td id="plus-minus">+/-</td>
-          <td id="percent">%</td>
-          <td id="divide" data-value="/">/</td>
-        </tr>
-        <tr>
-          <td id="seven" data-value="7">7</td>
-          <td id="eight" data-value="8">8</td>
-          <td id="nine" data-value="9">9</td>
-          <td id="multiply" data-value="*">X</td>
-        </tr>
-        <tr>
-          <td id="four" data-value="4">4</td>
-          <td id="five" data-value="5">5</td>
-          <td id="six" data-value="6">6</td>
-          <td id="minus" data-value="-">-</td>
-        </tr>
-        <tr>
-          <td id="one" data-value="1">1</td>
-          <td id="two" data-value="2">2</td>
-          <td id="three" data-value="3">3</td>
-          <td id="plus" data-value="+">+</td>
-        </tr>
-        <tr>
-          <td id="zero" data-value="0" colspan="2">0</td>
-          
-          <td id="point" data-value=".">.</td>
-          <td id="sum" data-value="=">=</td>
-        </tr>
-      </table>
-    </section>
-  </div>`;
-
-    updatedOpenedApp("Calculator");
+  // handleDockIcons();
+  if (html.classList.contains("hidden")) {
+    html.classList.remove("hidden");
   } else {
-    html.innerHTML = "";
+    html.classList.add("hidden");
   }
 };
 

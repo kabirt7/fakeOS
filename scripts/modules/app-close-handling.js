@@ -14,7 +14,7 @@ export function handleWindowButtons(event) {
   }
 }
 
-export function handleDockIcons() {
+export function closeModals() {
   closeAll();
 }
 
@@ -27,10 +27,8 @@ function closeAll() {
     document.querySelector("#htmlRef-modal"),
   ];
 
-  for (let i = 0; i < modals.length - 1; i++) {
-    modals[i].innerHTML = "";
+  for (let i = 0; i < modals.length; i++) {
+    modals[i].classList.add("hidden");
   }
   // modals.forEach((value) => (value.innerHTML = ""));
-
-  modals[3].style.display = "none";
 }

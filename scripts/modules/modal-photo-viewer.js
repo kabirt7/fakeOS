@@ -1,6 +1,6 @@
-import { updatedOpenedApp } from "../script.js";
-import { handleDockIcons } from "./app-close-handling.js";
-import { handleWindowButtons } from "./app-close-handling.js";
+// import { updatedOpenedApp } from "../script.js";
+// import { handleDockIcons } from "./app-close-handling.js";
+import { handleWindowButtons, closeModals } from "./app-close-handling.js";
 
 export function findParent(element) {
   while (element) {
@@ -40,97 +40,78 @@ const albums = [
   },
 ];
 
+const html = document.querySelector("#htmlRef-photo");
+
 export const photoViewerModal = () => {
-  const html = document.querySelector("#htmlRef-photo");
-  if (html.innerHTML === "") {
-    handleDockIcons();
-    html.innerHTML = `
-    <div class="photo-viewer">
-     <section class="left">
-      <ul class="left__header">
-       <li class="red"></li>
-       <li class="yellow"></li>
-       <li class="green"></li>
-      </ul>
-      <div class="left__menu__title">Albums</div>
-       <ul class="left__menu">
-       
-       </ul>
-     </section> 
-     <section class="right">
-      <div class="right__header">
-       <button class="right__button right__button__left"></button>
-       <button class="right__button right__button__right"></button>
-       <h3 class="right__header__title">Jewellery</h3>
-      </div>
-      <ul class="right__icon__container">
-      </ul>
-     </section>
-    </div>
-    `;
+  closeModals();
 
-    const albumContainer = document.querySelector(".right__icon__container");
-    const photoMenu = document.querySelector(".left__menu");
-    const photoModal = document.querySelector("#htmlRef-modal");
-    const cross = photoModal.querySelector("div");
-
-    albums.forEach((album, index) => {
-      // for left menu options
-      const albumOption = document.createElement("li");
-      const albumOptionIcon = document.createElement("img");
-      const albumOptionTitle = document.createElement("p");
-      albumOption.classList.add("left__menu__option");
-      albumOptionIcon.src = "../../src/Icon-Photo.png";
-      albumOptionTitle.textContent = album.title;
-      if (index === 0) {
-        albumOption.classList.add("left__menu__option--clicked");
-      }
-      albumOption.id = `option-${index}`;
-      albumOption.appendChild(albumOptionIcon);
-      albumOption.appendChild(albumOptionTitle);
-      photoMenu.appendChild(albumOption);
-
-      // for right container albums and enclosed images
-
-      const photoAlbum = document.createElement("li");
-      photoAlbum.classList.add("right__icon__album");
-      albumContainer.appendChild(photoAlbum);
-      photoAlbum.id = `album-${index}`;
-
-      if (index !== 0) {
-        photoAlbum.classList.add("right__icon__album--hidden");
-      }
-
-      album.images.forEach((image) => {
-        const imageCont = document.createElement("div");
-        const title = document.createElement("p");
-        const icon = document.createElement("img");
-        title.textContent = image.name;
-        icon.src = "../../src/Icon-Photo.png";
-        imageCont.classList.add("right__icon");
-        imageCont.id = image.name;
-        imageCont.appendChild(icon);
-        imageCont.appendChild(title);
-        photoAlbum.appendChild(imageCont);
-
-        imageCont.addEventListener("click", (event) => {
-          if (event.target.tagName === "P" || event.target.tagName === "IMG") {
-            photoModal.style.display = "block";
-            photoModal.style.backgroundImage = `url(${image.pic})`;
-            photoModal.style.backgroundSize = "cover";
-            cross.style.display = "block";
-
-            // photoModal.style.backgroundColor = "magenta";
-          }
-        });
-      });
-    });
-
-    updatedOpenedApp("Photos");
+  if (html.classList.contains("hidden")) {
+    html.classList.remove("hidden");
   } else {
-    html.innerHTML = "";
+    html.classList.add("hidden");
   }
 };
+
+export function generateAlbums() {
+  const albumContainer = document.querySelector(".right__icon__container");
+  const photoMenu = document.querySelector(".left__menu");
+  const photoModal = document.querySelector("#htmlRef-modal");
+  const modalImage = document.querySelector(".modal");
+  // const cross = photoModal.querySelector("div");
+
+  albums.forEach((album, index) => {
+    // for left menu options
+    const albumOption = document.createElement("li");
+    const albumOptionIcon = document.createElement("img");
+    const albumOptionTitle = document.createElement("p");
+    albumOption.classList.add("left__menu__option");
+    albumOptionIcon.src = "../../src/Icon-Photo.png";
+    albumOptionTitle.textContent = album.title;
+    if (index === 0) {
+      albumOption.classList.add("left__menu__option--clicked");
+    }
+    albumOption.id = `option-${index}`;
+    albumOption.appendChild(albumOptionIcon);
+    albumOption.appendChild(albumOptionTitle);
+    photoMenu.appendChild(albumOption);
+
+    // for right container albums and enclosed images
+
+    const photoAlbum = document.createElement("li");
+    photoAlbum.classList.add("right__icon__album");
+    albumContainer.appendChild(photoAlbum);
+    photoAlbum.id = `album-${index}`;
+
+    if (index !== 0) {
+      photoAlbum.classList.add("right__icon__album--hidden");
+    }
+
+    album.images.forEach((image) => {
+      const imageCont = document.createElement("div");
+      const title = document.createElement("p");
+      const icon = document.createElement("img");
+      title.textContent = image.name;
+      icon.src = "../../src/Icon-Photo.png";
+      imageCont.classList.add("right__icon");
+      imageCont.id = image.name;
+      imageCont.appendChild(icon);
+      imageCont.appendChild(title);
+      photoAlbum.appendChild(imageCont);
+
+      imageCont.addEventListener("click", (event) => {
+        if (
+          event.target.tagName.toLowerCase() === "img" ||
+          event.target.tagName.toLowerCase() === "p"
+        ) {
+          photoModal.classList.remove("hidden");
+          // photoModal.src = image.pic;
+          modalImage.style.backgroundImage = `url(${image.pic})`;
+          modalImage.style.backgroundSize = "cover";
+        }
+      });
+    });
+  });
+}
 
 export function findParentId(element) {
   while (element) {
@@ -185,9 +166,6 @@ function deselectMenuItems() {
 // }
 
 const transformValue = (input) => {
-  // Assuming the input format is always "option-N"
-  // where N is a number, and you want to transform it to "album-N"
-
   // Extract the number part from the input
   const numberPart = input.split("-")[1];
 
