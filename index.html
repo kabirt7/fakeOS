@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fakeOS</title>
+    <link rel="stylesheet" href="./styling/CSS/styles.css" />
+    <link rel="stylesheet" href="./styling/CSS/calculator.css" />
+    <link rel="stylesheet" href="./styling/CSS/photo-viewer.css" />
+    <link rel="stylesheet" href="./styling/CSS/notes.css" />
+  </head>
+  <body>
+    <section class="banner">
+      <ul class="banner__list">
+        <li class="banner__list__item" id="apple-wrapper">
+          <img src="./src/apple.png" />
+        </li>
+        <li class="banner__list__item">Applications</li>
+        <li class="banner__list__item">Edit</li>
+        <li class="banner__list__item">Selection</li>
+        <li class="banner__list__item">Help</li>
+        <li id="clock"></li>
+      </ul>
+    </section>
+    <div id="apple-menu" class="banner__menu banner__menu--hidden">
+      <ul>
+        <li>About This Mac</li>
+        <li>System Preferences</li>
+        <li>Shutdown...</li>
+      </ul>
+    </div>
+
+    <main class="desktop">
+      <ul class="desktop__container"></ul>
+      <div class="hidden" id="htmlRef-calc">
+        <div class="calculator">
+          <section id="top">
+            <div class="calculator__banner">
+              <ul>
+                <li class="red"></li>
+                <li class="yellow"></li>
+                <li class="green"></li>
+              </ul>
+            </div>
+            <div class="calculator__display">
+              <p class="calculator__display__text"></p>
+            </div>
+            <div class="calculator__expression"></div>
+          </section>
+          <section id="bottom">
+            <table>
+              <tr>
+                <td id="reset" data-value="AC">AC</td>
+                <td id="plus-minus">+/-</td>
+                <td id="percent">%</td>
+                <td id="divide" data-value="/">/</td>
+              </tr>
+              <tr>
+                <td id="seven" data-value="7">7</td>
+                <td id="eight" data-value="8">8</td>
+                <td id="nine" data-value="9">9</td>
+                <td id="multiply" data-value="*">X</td>
+              </tr>
+              <tr>
+                <td id="four" data-value="4">4</td>
+                <td id="five" data-value="5">5</td>
+                <td id="six" data-value="6">6</td>
+                <td id="minus" data-value="-">-</td>
+              </tr>
+              <tr>
+                <td id="one" data-value="1">1</td>
+                <td id="two" data-value="2">2</td>
+                <td id="three" data-value="3">3</td>
+                <td id="plus" data-value="+">+</td>
+              </tr>
+              <tr>
+                <td id="zero" data-value="0" colspan="2">0</td>
+
+                <td id="point" data-value=".">.</td>
+                <td id="sum" data-value="=">=</td>
+              </tr>
+            </table>
+          </section>
+        </div>
+      </div>
+      <div class="hidden" id="htmlRef-photo">
+        <div class="photo-viewer">
+          <section class="left">
+            <ul class="left__header">
+              <li class="red"></li>
+              <li class="yellow"></li>
+              <li class="green"></li>
+            </ul>
+            <div class="left__menu__title">Albums</div>
+            <ul class="left__menu"></ul>
+          </section>
+          <section class="right">
+            <div class="right__header">
+              <button class="right__button right__button__left"></button>
+              <button class="right__button right__button__right"></button>
+              <h3 class="right__header__title">Jewellery</h3>
+            </div>
+            <ul class="right__icon__container"></ul>
+          </section>
+        </div>
+        <!-- <div
+          class="red hidden"
+          style="
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            display: none;
+            z-index: 20;
+          "
+        ></div> -->
+      </div>
+      <div class="hidden" id="htmlRef-notes">
+        <div class="notes">
+          <section class="notes__banner">
+            <ul class="notes__window-menu">
+              <li class="red"></li>
+              <li class="yellow"></li>
+              <li class="green"></li>
+            </ul>
+            <button id="save-button">Save</button>
+            <button id="delete-button">Delete</button>
+          </section>
+          <section class="notes__container">
+            <ul class="notes__list">
+              <li class="notes__list__item">Note 1</li>
+              <li class="notes__list__item">Note 2</li>
+              <li class="notes__list__item">Note 3</li>
+            </ul>
+            <main class="notes__create">
+              <textarea class="notes__create__input"></textarea>
+            </main>
+          </section>
+        </div>
+      </div>
+      <div class="hidden" id="htmlRef-modal">
+        <header class="modal__banner">
+          <ul class="notes__window-menu">
+            <li class="red"></li>
+            <li class="yellow"></li>
+            <li class="green"></li>
+          </ul>
+        </header>
+        <main class="modal"></main>
+      </div>
+      <footer class="dock__container">
+        <ul class="dock__wrap"></ul>
+      </footer>
+    </main>
+    <script type="module" src="./scripts/script.js" defer></script>
+  </body>
+</html>

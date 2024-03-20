@@ -1,0 +1,106 @@
+@use "./mixin";
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  height: 190px;
+  width: 125px;
+  border-radius: 10px;
+  box-shadow: 0 12px 24px rgba(60, 64, 67, 0.5),
+    0 24px 48px rgba(60, 64, 67, 0.6);
+  background: rgba(
+    10,
+    10,
+    10,
+    0.6
+  ); /* Adjust the opacity for the glassy effect */
+  // box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1); /* Shadow for the glassy effect */
+  backdrop-filter: blur(10px);
+
+  @include mixin.tablet {
+    height: 380px;
+    width: 250px;
+  }
+
+  @include mixin.computer {
+    height: 500px;
+    width: 335px;
+  }
+
+  &__banner {
+    flex: 1;
+    padding-left: 10px;
+  }
+
+  &__display {
+    height: 70%;
+    position: relative;
+    color: white;
+
+    &__text {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      font-size: 2em;
+
+      @include mixin.phone {
+        font-size: medium;
+      }
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+    gap: 5px;
+    padding-top: 10px;
+  }
+
+  &__expression {
+    display: none;
+  }
+}
+
+#top {
+  height: 23%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#bottom {
+  width: 100%;
+  flex: 1;
+
+  table {
+    width: 100%;
+    height: 100%;
+
+    border-spacing: 1px;
+  }
+
+  td:last-child {
+    background-color: orange;
+  }
+
+  td {
+    color: white;
+    width: 25%;
+    text-align: center;
+    background: rgba(158, 158, 158, 0.55);
+    font-size: 1em;
+  }
+}
+
+#zero {
+  border-radius: 0 0 0 10px;
+}
+
+#sum {
+  border-radius: 0 0 10px 0;
+}
+
+// border-radius: 0 0 0 20px

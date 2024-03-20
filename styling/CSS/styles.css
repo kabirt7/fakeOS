@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: default;
+}
+
+.red {
+  background-color: rgb(249, 94, 94);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  list-style-type: none;
+}
+
+.yellow {
+  background-color: rgb(247, 221, 119);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  list-style-type: none;
+}
+
+.green {
+  background-color: rgb(113, 249, 127);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  list-style-type: none;
+}
+
+.banner {
+  width: 100vw;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  background: rgba(99, 99, 99, 0.3); /* Adjust the opacity for the glassy effect */
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5); /* Shadow for the glassy effect */
+  backdrop-filter: blur(10px);
+}
+.banner__list {
+  opacity: 100%;
+  display: flex;
+  padding-left: 5px;
+  height: 25px;
+  justify-content: flex-start;
+  align-items: center;
+  list-style-type: none;
+  gap: 10px;
+}
+.banner__list__item {
+  display: flex;
+  align-items: center;
+}
+.banner__list__item--clicked {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.banner__list__item img {
+  width: 15px;
+  height: 15px;
+}
+.banner__menu--hidden {
+  display: none;
+}
+.banner__menu--show {
+  position: absolute;
+  top: 20px;
+  left: 5px;
+  z-index: 10;
+  width: 200px;
+  border-radius: 4px;
+  top: 25px;
+  background: rgba(255, 255, 255, 0.1); /* Adjust the opacity for the glassy effect */
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1); /* Shadow for the glassy effect */
+  backdrop-filter: blur(10px);
+}
+.banner__menu--show ul {
+  list-style-type: none;
+  padding: 5px;
+}
+.banner__menu--show ul li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 3px;
+  border-radius: 5px;
+}
+.banner__menu--show ul li:hover {
+  background-color: rgb(0, 102, 255);
+  color: white;
+}
+.banner li {
+  padding: 1.5px 10px 1.5px 10px;
+  font-size: 15px;
+}
+
+#clock {
+  position: absolute;
+  right: 0;
+}
+
+.desktop {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: -6;
+  background-image: url("../../src/Background-Image.jpg");
+  background-size: cover;
+}
+.desktop__container {
+  height: 100%;
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  list-style-type: none;
+  z-index: 0;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 20px;
+  gap: 40px;
+}
+.desktop__container li {
+  padding-right: 30px;
+  height: 55px;
+  width: 30px;
+  background-size: "cover";
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: small;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(0, 0, 0, 0.9);
+}
+.desktop__container li p {
+  padding: 59px 0 0 28px;
+}
+.desktop__container li:nth-child(3) {
+  margin-top: 30px;
+}
+@media only screen and (min-width: 1800px) {
+  .desktop__container li:nth-child(3) {
+    margin-top: 30px;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1800px) {
+  .desktop__container li:nth-child(3) {
+    margin-top: 40px;
+  }
+}
+.desktop__container :nth-child(4),
+.desktop__container :nth-child(5) {
+  display: none;
+}
+
+.dock__container {
+  height: 70px;
+  width: 100vw;
+  z-index: 998;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 5px;
+}
+@media only screen and (min-width: 1000px) and (max-width: 1800px) {
+  .dock__container {
+    height: 90px;
+    bottom: 10px;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .dock__container {
+    height: 120px;
+    bottom: 10px;
+  }
+}
+.dock__wrap {
+  padding: 0 20px;
+  margin-top: 2.5px;
+  display: flex;
+  list-style-type: none;
+  width: auto;
+  background-color: rgb(202, 186, 255);
+  height: 90%;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.3); /* Adjust the opacity for the glassy effect */
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1); /* Shadow for the glassy effect */
+  backdrop-filter: blur(10px);
+}
+.dock__item {
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  line-height: 50px;
+}
+@media only screen and (min-width: 1000px) and (max-width: 1800px) {
+  .dock__item {
+    height: 75px;
+    width: 75px;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .dock__item {
+    height: 95px;
+    width: 95px;
+  }
+}
+
+.modal {
+  height: calc(70vh - 50px);
+  border-radius: 0 0 12px 12px;
+}
+.modal__banner {
+  background-color: rgb(232, 232, 232);
+  height: 50px;
+  width: calc(70vh - 50px);
+  display: flex;
+  align-items: center;
+  border-radius: 12px 12px 0 0;
+}
+
+#htmlRef-calc {
+  align-self: center;
+  z-index: 5;
+}
+
+#htmlRef-photo {
+  align-self: center;
+  z-index: 5;
+}
+
+#htmlRef-notes {
+  align-self: center;
+  z-index: 5;
+}
+
+#htmlRef-modal {
+  align-self: center;
+  z-index: 10;
+  position: absolute;
+}
+
+.hidden {
+  display: none;
+}
