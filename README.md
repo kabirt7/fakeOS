@@ -4,12 +4,6 @@
 
 ![demo of project](demo.gif)
 
-## Issues
-
-- I had originally added the modals through js modifying of index innerHTML. However, I have changed the project such that all the modals are hard-coded into index.html. This way I can alter their display through hiding the root modal element. 
-- Configuring the modal functionality with code that is injected through innerHTML injected from js files didn’t always register when referincing them by ID. The DOM content had loaded, however the js logic file just wasn’t registering the injected code when scanning the HTML.
-- For the Calculator Modal, I’ve used eval() which I’ve since learned is deprecated due to security risks. This is due to the ability of eval to execute any code passed to it as a String.
-
 ## MVP
 
 * You will be creating an SPA (Single Page Application)
@@ -36,10 +30,18 @@
 - Calculator modal 
 - Notes modal - can add or delete notes. Reset when session re-loads
 
+## Issues
+
+- I had originally added the modals through js modifying of index innerHTML. However, I have changed the project such that all the modals are hard-coded into index.html. This way I can alter their display through hiding the root modal element. 
+- Configuring the modal functionality with code that is injected through innerHTML injected from js files didn’t always register when referincing them by ID. The DOM content had loaded, however the js logic file just wasn’t registering the injected code when scanning the HTML.
+- For the Calculator Modal, I’ve used eval() which I’ve since learned is deprecated due to security risks. This is due to the ability of eval to execute any code passed to it as a String.
+
 ## Future Goals
  
 - Use local storage API for the Notes Modal so that it can be used functionally and not reset after every session
 - Add a basic info modal that is shown when ‘About This Mac’ is clicked in the page banner.
 - Re-do calculator functionality without eval()
-- Make the yellow and green modal buttons have a minimise and enlarge size functionality (respectively) instead of currently where they all have close-modal functionality 
+- Make the yellow and green modal buttons have a minimise and enlarge size functionality (respectively) instead of currently where they all have close-modal functionality
+
+
 
